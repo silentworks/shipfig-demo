@@ -21,10 +21,25 @@ describe("paginate", () => {
     assert.equal(page.hasNext, true);
   });
 
+  it("returns the last page", () => {
+    const page = paginate(letters, 3, 2);
+    assert.deepEqual(page.items, ["e"]);
+    assert.equal(page.totalPages, 3);
+    assert.equal(page.hasPrevious, true);
+    assert.equal(page.hasNext, false);
+  });
+
+  it("reports no next page past the end", () => {
+    const page = paginate(letters, 4, 2);
+    assert.deepEqual(page.items, []);
+    assert.equal(page.hasNext, false);
+  });
+
   it("treats an empty list as one empty page", () => {
     const page = paginate([], 1, 10);
     assert.deepEqual(page.items, []);
     assert.equal(page.totalPages, 1);
+    assert.equal(page.hasNext, false);
   });
 
   it("rejects invalid arguments", () => {
