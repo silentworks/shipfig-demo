@@ -1,0 +1,18 @@
+{
+  "name": "shipfig-demo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A tiny pagination library used to demo Shipfig.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "typecheck": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}
