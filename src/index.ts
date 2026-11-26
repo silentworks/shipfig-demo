@@ -1,1 +1,1 @@
-export { paginate, type Page } from "./paginate.ts";
+export { paginate, type Page, type PaginateOptions } from "./paginate.ts";
