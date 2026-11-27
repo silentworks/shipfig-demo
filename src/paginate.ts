@@ -27,6 +27,6 @@ export function paginate<T>(items: readonly T[], page: number, pageSize: number)
     totalItems,
     totalPages,
     hasPrevious: page > 1,
-    hasNext: page <= totalPages,
+    hasNext: page < totalPages,
   };
 }
